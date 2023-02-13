@@ -1,0 +1,43 @@
+h1{
+    text-align: center;
+    color: white;
+}
+label{
+    color: rgb(243, 249, 251);
+    font-size: 1.2em;
+}
+h1{
+    color: blue;
+    font-weight: bold;
+    font-style: italic;
+}
+.glavni{
+   
+    background: linear-gradient(90deg, rgba(15,237,218,1) 56%, rgba(148,224,211,0.2847514005602241) 72%);
+}
+body{
+    background-color: deepskyblue;
+}
+h1{
+    text-align: center;
+}
+label{
+    color: rgb(243, 249, 251);
+    font-size: 1.2em;
+}
+
+.glavni{
+   
+    background: linear-gradient(90deg, rgba(15,237,218,1) 56%, rgba(148,224,211,0.2847514005602241) 72%);
+}
+body{
+    background-color: deepskyblue;
+}
+tr{
+    font-weight: bold;
+    color: black;
+    word-wrap: break-word;
+}
+.boja{
+    background-color: rgb(255, 140, 0);
+}

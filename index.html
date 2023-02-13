@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"
+    rel="stylesheet" id="bootstrap-css">
+
+
+  <script defer src="script.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Pripravnost</title>
+</head>
+
+<body style="background-color: deepskyblue;">
+
+  <h1 class="h1">Rad u Pripravnosti</h1>
+  <br>
+  <div class="glavni container">
+    <br>
+    <div class="container-fluid row">
+      <div class="col-3">
+        <form id="frmPripravnost" action="" style="background:rgba(17, 123, 141, 0.993)" class="boja form-control">
+          <label class="form-label">Korisnik/Kds</label>
+          <input type="text" name="korisnik" class="korisnik form-control" id="korisnik">
+          <label class="form-label">Problem</label><br>
+          <!-- <input name="problem" class="problem form-control"></input> -->
+          <textarea class="problem form-control" name="" id="problem" cols="30" rows="3"></textarea>
+          <label class="form-label">Radnja</label><br>
+
+          <textarea class="radnja form-control" name="" id="radnja" cols="30" rows="3"></textarea>
+          <label class="form-label">Kolega sa Terena</label><br>
+          <input type="text" name="kolega" class="kolega form-control" id="kolega">
+          <label class="form-label">Komentar</label><br>
+          <!-- <input name="komentar" id="" class="komentar form-control"></input> -->
+          <textarea class="komentar form-control" name="" id="komentar" cols="30" rows="3"></textarea>
+          <label class="form-label">Broj Operacija</label><br>
+          <input type="number" name="broj" class="broj form-control" value="1" id="brOper">
+          <label class="form-label">Datum</label>
+          <input type="text" name="datum" id="datum" placeholder="" class="datum date form-control " />
+
+          <script type="text/javascript">
+            $(".date").datepicker(
+              {
+
+                format: "dd.mm.yyyy",
+                autoclose: true,
+                format: "dd.mm.yyyy",
+                todayHighlight: true,
+
+              }).datepicker("setDate", "0");
+          </script>
+          <label class="form-label">Radnik</label>
+
+          <select class="radnik form-control" name="" id="optRadnik">
+            <option value="Rade Pralica">Rade Pralica</option>
+            <option value="Branislav Lukić">Branislav Lukić</option>
+          </select>
+          <br>
+
+          <br>
+          <button class="btn btn-lg btn-primary" id="clearFields">Očisti</button>
+          <button class="btn btn-lg btn-success" id="btnAdd">Dodaj</button>
+          <!-- <button  class="btn btn-sm btn-warning" id="edit">Prepravi</button>
+        <button onclick="removeSelectedRow()" class="btn btn-sm btn-danger">Ukloni</button> -->
+
+          <br><br>
+      </div>
+
+      <div class="col-9">
+
+        </form>
+        <table id="tblData" class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th id="index" scope="col">R.br</th>
+              <th scope="col">Korisnik</th>
+              <th scope="col">Problem</th>
+              <th scope="col">Radnja</th>
+              <th scope="col">Kolega</th>
+              <th scope="col">Komentar</th>
+              <th scope="col">Br.Oper.</th>
+              <th scope="col">Datum</th>
+              <th scope="col">Radnik</th>
+              <th scope="col">Operacija radnika</th>
+
+            </tr>
+          </thead>
+          <tbody id="tBody">
+            <!-- <tr>
+              <td>1</td>
+              <td>Korisnik</td>
+              <td>Problem</td>
+              <td>Radnja</td>
+              <td>Kolega</td>
+              <td>Komentar</td>
+              <td>Br.Oper.</td>
+              <td>Datum</td>
+              <td>Radnik</td>
+           <td>
+            <button class="btn btn-warning">Edit</button>
+            <button class="btn btn-danger">Del</button>
+           </td>
+            </tr> -->
+          </tbody>
+        </table>
+        <!-- <button  class="btn btn-lg btn-primary" id="clearFields">Očisti Polja</button>
+        <button class="btn btn-lg btn-success" id="btnAdd">Dodaj</button> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-7">
+              <button class="btn btn-lg btn-danger" id="deleteTable" >Obriši Tabelu</button>
+              <button class="btn btn-lg btn-success" id="eksport">Skini
+                Tabelu</button>
+            </div>
+            <div class="col-1">
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
